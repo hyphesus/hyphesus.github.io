@@ -11,12 +11,16 @@
             padding: 0;
             background: #111;
             color: #fff;
-            overflow: hidden;
+            overflow-x: hidden; 
+        }
+
+        html, body {
+            overflow-y: auto;
         }
 
         header {
             text-align: center;
-            padding: 30px 0; /* Reduced padding */
+            padding: 30px 0; 
             background: rgba(0, 0, 0, 0.7);
             position: relative;
             z-index: 10;
@@ -33,7 +37,7 @@
         }
 
         section {
-            padding: 30px; /* Reduced padding */
+            padding: 30px; 
             text-align: center;
             background: rgba(0, 0, 0, 0.8);
             position: relative;
@@ -129,7 +133,7 @@
         }
 
         .social-links a:first-child img {
-            width: 100px; /* Make the first logo (Ko-fi) wider */
+            width: 100px; 
         }
 
         .social-links img:hover {
@@ -164,7 +168,7 @@
             }
 
             .social-links a:first-child img {
-                width: 80px; /* Adjust width for smaller screens */
+                width: 80px; 
             }
         }
 
