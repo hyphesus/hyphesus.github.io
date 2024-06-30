@@ -16,7 +16,7 @@
 
         header {
             text-align: center;
-            padding: 50px 0;
+            padding: 30px 0; /* Reduced padding */
             background: rgba(0, 0, 0, 0.7);
             position: relative;
             z-index: 10;
@@ -33,7 +33,7 @@
         }
 
         section {
-            padding: 50px;
+            padding: 30px; /* Reduced padding */
             text-align: center;
             background: rgba(0, 0, 0, 0.8);
             position: relative;
@@ -117,6 +117,20 @@
                 transform: translate(0, 0);
             }
         }
+
+        .social-links {
+            margin-top: 20px;
+        }
+
+        .social-links img {
+            width: 40px;
+            margin: 0 10px;
+            transition: transform 0.3s;
+        }
+
+        .social-links img:hover {
+            transform: scale(1.2);
+        }
     </style>
 </head>
 <body>
@@ -127,16 +141,16 @@
     </header>
     <section>
         <h2>About Me</h2>
-        <p>Hi, I'm Berhan Saydam, a passionate game developer with experience in creating immersive and engaging games. My portfolio showcases some of my favorite projects. Feel free to explore!</p>
-                <div class="social-links">
+        <p>Hi, I'm Berhan Saydam, a passionate game developer with experience in creating immersive and engaging games. My portfolio showcases some of my favorite projects. You can mail me at berhansaydam01@gmail.com!</p>
+        <div class="social-links">
             <a href="https://ko-fi.com/hyphesus" target="_blank">
                 <img src="https://github.com/hyphesus/hyphesus.github.io/blob/main/images/ko-fi.png?raw=true" alt="Ko-fi">
             </a>
-            <a href="https://linkedin.com/in/berhansaydam" target="_blank">
+            <a href="https://www.linkedin.com/in/berhan-saydam/" target="_blank">
                 <img src="https://github.com/hyphesus/hyphesus.github.io/blob/main/images/linkedin.png?raw=true" alt="LinkedIn">
             </a>
-            <a href="mailto:berhansaydam01@gmail.com">
-                <img src="https://github.com/hyphesus/hyphesus.github.io/blob/main/images/mail.png?raw=true" alt="Email">
+            <a href="https://github.com/hyphesus">
+                <img src="https://github.com/hyphesus/hyphesus.github.io/blob/main/images/github.png?raw=true" alt="GitHub">
             </a>
         </div>
     </section>
