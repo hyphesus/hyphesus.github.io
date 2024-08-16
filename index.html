@@ -35,6 +35,8 @@
                 <!-- Items will be dynamically added here -->
             </ul>
         </div>
+        <audio id="background-music" src="bg.mp3" loop></audio>
+        <button id="mute-button" onclick="toggleMute()">Unmute</button>
         <div id="modal" class="modal hidden">
             <div class="modal-content">
                 <span class="close-btn" onclick="closeModal()">&times;</span>
@@ -236,6 +238,24 @@
 
         createMinimap();
         updateRoom(); // Initialize the first room
+
+            // Background music control
+        const backgroundMusic = document.getElementById('background-music');
+
+        function toggleMute() {
+            const muteButton = document.getElementById('mute-button');
+            if (backgroundMusic.paused) {
+                backgroundMusic.play();  // Start playing the music if it's not playing yet
+                muteButton.innerText = "Mute";
+                backgroundMusic.muted = false;
+            } else if (backgroundMusic.muted) {
+                backgroundMusic.muted = false;
+                muteButton.innerText = "Mute";
+            } else {
+                backgroundMusic.muted = true;
+                muteButton.innerText = "Unmute";
+            }
+        }
     </script>
 </body>
 
