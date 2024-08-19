@@ -187,3 +187,49 @@ li {
     margin-top: 10px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 }
+
+/* Responsive Design for Mobile and Tablets */
+@media (max-width: 768px) {
+    #game-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
+        grid-template-areas:
+            "minimap"
+            "game-screen"
+            "inventory";
+        height: auto;
+    }
+
+    #inventory {
+        max-height: 150px;
+        overflow-y: auto; /* Make the inventory scrollable if there are many items */
+    }
+
+    button {
+        padding: 15px 20px;
+        font-size: 1.2em;
+    }
+
+    #minimap {
+        padding: 10px;
+        text-align: center;
+    }
+
+    #map-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 3px;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+/* Responsive Design for Large Screens */
+@media (min-width: 1200px) {
+    #game-container {
+        width: 80%;
+    }
+
+    #inventory {
+        max-height: 300px; /* Allow more items to be visible on larger screens */
+    }
+}
