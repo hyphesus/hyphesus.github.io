@@ -56,24 +56,16 @@ body {
 
 /* Game screen (description) */
 #game-screen {
-    display: grid;
-    grid-template-rows: auto auto; /* Define two rows */
-    grid-gap: 20px; /* Space between rows */
+    /* No need for display: flex or grid here */
 }
 
-/* Inside game-screen */
+/* Room description */
 #room-description {
-    grid-row: 1; /* Place in the first row */
     width: 100%;
+    margin-bottom: 0; /* Remove bottom margin since interactions are now separate */
 }
 
-#interactions {
-    grid-row: 2; /* Place in the second row */
-    justify-self: center; /* Center horizontally */
-    width: 150px; /* Ensure proper width */
-}
-
-/* Interaction buttons grid */
+/* Interaction buttons */
 #interactions {
     display: grid;
     grid-template-areas:
@@ -81,6 +73,8 @@ body {
         "west . east"
         ". south .";
     gap: 10px;
+    width: 150px;
+    margin: 0 auto 20px auto; /* Center and add bottom margin */
 }
 
 /* Assign grid areas to buttons */
