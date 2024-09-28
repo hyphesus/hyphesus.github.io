@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,7 +8,6 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="mobile.css" media="screen and (max-width: 768px)">
 </head>
-    
 <body>
     <div id="game-container">
         <div id="minimap">
@@ -24,20 +22,21 @@
                 <p>You find yourself in a dimly lit room with a computer terminal in the center. The air is filled with
                     the hum of machinery...</p>
             </div>
-            <div id="interactions">
-                <button id="north" onclick="moveToRoom('north')">
-                    <i class="fas fa-arrow-up"></i>
-                </button>
-                <button id="west" onclick="moveToRoom('west')">
-                    <i class="fas fa-arrow-left"></i>
-                </button>
-                <button id="east" onclick="moveToRoom('east')">
-                    <i class="fas fa-arrow-right"></i>
-                </button>
-                <button id="south" onclick="moveToRoom('south')">
-                    <i class="fas fa-arrow-down"></i>
-                </button>
-            </div>
+        </div>
+        <!-- Moved #interactions outside of #game-screen -->
+        <div id="interactions">
+            <button id="north" onclick="moveToRoom('north')">
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            <button id="west" onclick="moveToRoom('west')">
+                <i class="fas fa-arrow-left"></i>
+            </button>
+            <button id="east" onclick="moveToRoom('east')">
+                <i class="fas fa-arrow-right"></i>
+            </button>
+            <button id="south" onclick="moveToRoom('south')">
+                <i class="fas fa-arrow-down"></i>
+            </button>
         </div>
         <div id="inventory">
             <h3>Inventory</h3>
@@ -57,7 +56,7 @@
     <div id="tutorial">
         <p>Use the arrow keys / buttons on screen to navigate and click on items in your inventory to learn more.</p>
     </div>
-
+    
     <script>
         const rooms = {
             start: {
