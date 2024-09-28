@@ -4,29 +4,22 @@ body {
     padding: 0;
     font-size: 16px;
     line-height: 1.5;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
+    /* Removed height and flex properties */
 }
 
 /* Game container setup */
 #game-container {
-    display: flex;
-    flex-direction: column;
     width: 100%;
-    padding: 0;
-    max-width: 100%;
+    max-width: 600px; /* Optional: Limit the max width for larger screens */
     margin: 0 auto;
-    height: auto;
+    padding: 0;
 }
 
 /* Tutorial section */
 #tutorial {
     width: 100%;
-    padding: 30px; /* Increased padding for Y-axis */
-    margin-bottom: 30px; /* Extra margin to make the section look longer */
+    padding: 20px; /* Adjusted padding */
+    margin-bottom: 20px; /* Adjusted margin */
     background-color: #1e1e1e;
     color: #f0f0f0;
     text-align: center;
@@ -38,8 +31,8 @@ body {
 /* Minimap section */
 #minimap {
     width: 100%;
-    padding: 30px; /* Increased padding */
-    margin-bottom: 30px; /* Extra margin to space it out */
+    padding: 20px; /* Adjusted padding */
+    margin-bottom: 20px; /* Adjusted margin */
     background-color: #1e1e1e;
     text-align: center;
     border-radius: 10px;
@@ -51,23 +44,23 @@ body {
     grid-template-columns: repeat(3, 1fr);
     gap: 5px;
     width: 100%;
-    height: 150px; /* Adjusted height to keep it visible but not too large */
+    height: 150px;
 }
 
 /* Game screen (description) */
 #game-screen {
     width: 100%;
-    padding: 30px; /* Increased padding for more vertical space */
-    margin-bottom: 30px; /* Extra margin */
+    padding: 20px; /* Adjusted padding */
+    margin-bottom: 20px; /* Adjusted margin */
     background-color: #1e1e1e;
     text-align: center;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    min-height: 350px; /* Make this section longer */
-    overflow-y: auto; /* Allow scrolling if the content is too long */
+    min-height: 350px;
+    overflow-y: auto;
 }
 
-/* Interaction buttons section - unchanged as per request */
+/* Interaction buttons section */
 #interactions {
     display: grid;
     grid-template-areas:
@@ -77,6 +70,7 @@ body {
     gap: 10px;
     margin-bottom: 20px;
     width: 150px;
+    margin: 0 auto 20px auto; /* Center the interactions section */
 }
 
 #north {
@@ -114,25 +108,25 @@ button {
 /* Inventory section */
 #inventory {
     width: 100%;
-    padding: 30px; /* Increased padding */
-    margin-bottom: 30px; /* Extra margin */
+    padding: 20px; /* Adjusted padding */
+    margin-bottom: 20px; /* Adjusted margin */
     background-color: #1e1e1e;
     text-align: center;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    min-height: 200px; /* Make the inventory section longer */
+    min-height: 200px;
     overflow-y: auto;
 }
 
 /* Mute button */
 #mute-button {
     width: 100%;
-    padding: 20px; /* Slightly larger padding */
+    padding: 15px; /* Adjusted padding */
     font-size: 1.2em;
     background-color: #333;
     color: #fff;
     border-radius: 10px;
     cursor: pointer;
     text-align: center;
-    margin-top: 30px;
+    margin: 20px 0; /* Adjusted margin */
 }
