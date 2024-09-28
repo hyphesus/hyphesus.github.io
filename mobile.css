@@ -20,13 +20,14 @@ body {
 /* Game container setup */
 #game-container {
     width: 100%;
-    max-width: 600px; /* Optional: adjust as needed */
+    max-width: 600px; /* Adjust as needed */
     margin: 0 auto;
-    padding: 0 15px; /* Side padding for better appearance on mobile */
+    padding: 0 15px; /* Side padding for mobile devices */
 }
 
 /* Sections styling */
-#game-container > div, #tutorial {
+#game-container > div,
+#tutorial {
     width: 100%;
     padding: 20px;
     margin-bottom: 20px;
@@ -35,9 +36,9 @@ body {
     text-align: center;
     font-size: 1em;
     border-radius: 10px;
-    overflow: hidden; /* Ensure content doesn't overflow */
+    overflow: hidden; /* Prevent overflow */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    position: relative; /* Ensure elements are positioned relative */
+    position: relative;
 }
 
 /* Minimap adjustments */
@@ -55,19 +56,24 @@ body {
 
 /* Game screen (description) */
 #game-screen {
-    display: flex;
-    flex-direction: column;
-    /* Ensure child elements stack vertically */
+    display: grid;
+    grid-template-rows: auto auto; /* Define two rows */
+    grid-gap: 20px; /* Space between rows */
 }
 
 /* Inside game-screen */
 #room-description {
+    grid-row: 1; /* Place in the first row */
     width: 100%;
-    margin-bottom: 20px;
-    min-height: 100px;
-    position: relative; /* Ensure it's in normal flow */
 }
 
+#interactions {
+    grid-row: 2; /* Place in the second row */
+    justify-self: center; /* Center horizontally */
+    width: 150px; /* Ensure proper width */
+}
+
+/* Interaction buttons grid */
 #interactions {
     display: grid;
     grid-template-areas:
@@ -75,14 +81,9 @@ body {
         "west . east"
         ". south .";
     gap: 10px;
-    width: 150px;
-    clear: both;
-    margin: 0 auto;
-    position: relative; /* Ensure it's in normal flow */
-    /* Remove any absolute positioning */
 }
 
-/* Grid areas */
+/* Assign grid areas to buttons */
 #north {
     grid-area: north;
 }
@@ -116,6 +117,10 @@ button {
     transition: background-color 0.3s ease;
 }
 
+button:hover {
+    background-color: #555;
+}
+
 /* Inventory section */
 #inventory {
     overflow-y: auto;
@@ -134,6 +139,10 @@ button {
     margin: 20px 0;
 }
 
+#mute-button:hover {
+    background-color: #555;
+}
+
 /* Tutorial section */
 #tutorial {
     padding: 15px;
@@ -142,7 +151,8 @@ button {
 /* Responsive adjustments */
 @media (max-width: 480px) {
     /* Adjust padding and font sizes for smaller screens */
-    #game-container > div, #tutorial {
+    #game-container > div,
+    #tutorial {
         padding: 15px;
     }
 
