@@ -79,7 +79,6 @@ body {
 }
 
 /* Interaction buttons styled to resemble arrow keys */
-
 #interactions {
     display: grid;
     grid-template-areas:
@@ -197,59 +196,6 @@ li {
     border-radius: 10px;
     margin-top: 10px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-}
-
-/* Responsive Design for Mobile and Tablets */
-@media (max-width: 768px) {
-    #game-container {
-        grid-template-columns: 1fr;
-        grid-template-rows: auto auto auto;
-        grid-template-areas:
-            "minimap"
-            "game-screen"
-            "inventory";
-        height: auto;
-    }
-
-    #inventory {
-        max-height: 150px;
-        overflow-y: auto; /* Make the inventory scrollable if there are many items */
-    }
-
-    button {
-        padding: 15px 20px;
-        font-size: 1.2em;
-    }
-
-    #minimap {
-        padding: 10px;
-        text-align: center;
-    }
-
-    #map-grid {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 3px;
-        width: 100%;
-        height: 100%;
-    }
-
-    #interactions {
-        grid-template-areas:
-            "north"
-            "west south east";
-        position: static;
-        transform: none;
-        display: flex;
-        justify-content: space-around;
-        flex-wrap: wrap;
-    }
-
-    #north, #south, #east, #west {
-        width: 80px;
-        height: 80px;
-        padding: 10px;
-        font-size: 0.9em;
-    }
 }
 
 /* Responsive Design for Large Screens */
