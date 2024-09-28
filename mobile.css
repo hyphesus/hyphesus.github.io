@@ -6,63 +6,101 @@
 html, body {
     margin: 0;
     padding: 0;
-    font-family: sans-serif;
+    font-family: 'Courier New', Courier, monospace;
     font-size: 16px;
     line-height: 1.5;
     width: 100%;
+    background-color: #121212;
+    color: #f0f0f0;
 }
 
-/* General body setup */
+/* Override body styles for mobile */
 body {
-    width: 100%;
+    display: block; /* Change from flex to block to allow scrolling */
+    height: auto;   /* Remove fixed height to allow content to extend */
+    overflow-y: auto; /* Ensure body is scrollable */
 }
 
 /* Game container setup */
 #game-container {
+    display: grid; /* Use grid layout */
+    grid-template-columns: 1fr; /* Single column layout */
+    grid-template-rows: auto;
+    grid-template-areas:
+        "minimap"
+        "game-screen"
+        "interactions"
+        "inventory"
+        "mute-button"
+        "tutorial";
+    gap: 10px;
     width: 100%;
     max-width: 600px; /* Adjust as needed */
     margin: 0 auto;
-    padding: 0 15px; /* Side padding for mobile devices */
+    padding: 0 15px; /* Side padding for better appearance on mobile */
+}
+
+/* Assign grid areas */
+#minimap {
+    grid-area: minimap;
+}
+
+#game-screen {
+    grid-area: game-screen;
+    overflow-y: auto; /* Make scrollable */
+}
+
+#interactions {
+    grid-area: interactions;
+}
+
+#inventory {
+    grid-area: inventory;
+    overflow-y: auto; /* Make scrollable */
+}
+
+#mute-button {
+    grid-area: mute-button;
+}
+
+#tutorial {
+    grid-area: tutorial;
 }
 
 /* Sections styling */
 #game-container > div,
+#mute-button,
 #tutorial {
     width: 100%;
     padding: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 10px; /* Adjusted margin for better spacing */
     background-color: #1e1e1e;
     color: #f0f0f0;
     text-align: center;
     font-size: 1em;
     border-radius: 10px;
-    overflow: hidden; /* Prevent overflow */
+    overflow: hidden; /* Ensure content doesn't overflow */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     position: relative;
 }
 
 /* Minimap adjustments */
-#minimap {
-    overflow: hidden;
-}
-
 #map-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 5px;
     width: 100%;
-    height: 150px; /* Adjust as needed */
+    height: auto; /* Allow height to adjust based on content */
 }
 
-/* Game screen (description) */
+/* Game screen adjustments */
 #game-screen {
-    /* No need for display: flex or grid here */
+    height: auto; /* Allow height to adjust */
 }
 
 /* Room description */
 #room-description {
     width: 100%;
-    margin-bottom: 0; /* Remove bottom margin since interactions are now separate */
 }
 
 /* Interaction buttons */
@@ -74,7 +112,7 @@ body {
         ". south .";
     gap: 10px;
     width: 150px;
-    margin: 0 auto 20px auto; /* Center and add bottom margin */
+    margin: 0 auto; /* Center horizontally */
 }
 
 /* Assign grid areas to buttons */
@@ -116,13 +154,14 @@ button:hover {
 }
 
 /* Inventory section */
-#inventory {
-    overflow-y: auto;
+#inventory ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
 }
 
-/* Mute button */
+/* Mute button styling */
 #mute-button {
-    width: 100%;
     padding: 15px;
     font-size: 1.2em;
     background-color: #333;
@@ -130,7 +169,6 @@ button:hover {
     border-radius: 10px;
     cursor: pointer;
     text-align: center;
-    margin: 20px 0;
 }
 
 #mute-button:hover {
@@ -146,6 +184,7 @@ button:hover {
 @media (max-width: 480px) {
     /* Adjust padding and font sizes for smaller screens */
     #game-container > div,
+    #mute-button,
     #tutorial {
         padding: 15px;
     }
