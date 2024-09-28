@@ -37,6 +37,7 @@ body {
     border-radius: 10px;
     overflow: hidden; /* Ensure content doesn't overflow */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    position: relative; /* Ensure elements are positioned relative */
 }
 
 /* Minimap adjustments */
@@ -56,16 +57,16 @@ body {
 #game-screen {
     display: flex;
     flex-direction: column;
-    /* Removed align-items to allow full width */
+    /* Ensure child elements stack vertically */
 }
 
 /* Inside game-screen */
 #room-description {
     width: 100%;
     margin-bottom: 20px;
+    position: relative; /* Ensure it's in normal flow */
 }
 
-/* Interaction buttons */
 #interactions {
     display: grid;
     grid-template-areas:
@@ -74,8 +75,9 @@ body {
         ". south .";
     gap: 10px;
     width: 150px;
-    margin: 0 auto; /* Center the interactions */
-    /* Ensure it stacks naturally below the room description */
+    margin: 0 auto;
+    position: relative; /* Ensure it's in normal flow */
+    /* Remove any absolute positioning */
 }
 
 /* Grid areas */
