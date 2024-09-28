@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Berhan Saydam, Game Programmer Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="mobile.css" media="screen and (max-width: 768px)">
 </head>
@@ -24,10 +25,18 @@
                     the hum of machinery...</p>
             </div>
             <div id="interactions">
-                <button id="north" onclick="moveToRoom('north')">Go North</button>
-                <button id="west" onclick="moveToRoom('west')">Go West</button>
-                <button id="east" onclick="moveToRoom('east')">Go East</button>
-                <button id="south" onclick="moveToRoom('south')">Go South</button>
+                <button id="north" onclick="moveToRoom('north')">
+                    <i class="fas fa-arrow-up"></i>
+                </button>
+                <button id="west" onclick="moveToRoom('west')">
+                    <i class="fas fa-arrow-left"></i>
+                </button>
+                <button id="east" onclick="moveToRoom('east')">
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+                <button id="south" onclick="moveToRoom('south')">
+                    <i class="fas fa-arrow-down"></i>
+                </button>
             </div>
         </div>
         <div id="inventory">
