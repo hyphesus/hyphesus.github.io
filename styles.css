@@ -14,14 +14,16 @@ body {
 
 #game-container {
     display: grid;
-    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-columns: 1fr 2fr 1fr; /* Adjusted column widths */
     grid-template-rows: 1fr 4fr;
     grid-template-areas:
         "minimap game-screen inventory"
         "minimap game-screen inventory";
     width: 100%;
+    max-width: 1200px; /* Set maximum width */
     height: 80vh;
     gap: 10px;
+    margin: 0 auto; /* Center the container */
 }
 
 #minimap h3 {
@@ -72,6 +74,9 @@ body {
     border-radius: 10px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
     position: relative;
+    max-width: 600px; /* Set maximum width */
+    width: 100%;
+    margin: 0 auto; /* Center within the grid cell */
 }
 
 #room-description {
@@ -92,7 +97,7 @@ body {
     bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
-    width: 200px; /* Adjust as needed for button size */
+    width: 150px; /* Adjusted width */
 }
 
 #north {
@@ -201,7 +206,7 @@ li {
 /* Responsive Design for Large Screens */
 @media (min-width: 1200px) {
     #game-container {
-        width: 80%;
+        width: 100%; /* Use full width up to max-width */
     }
 
     #inventory {
