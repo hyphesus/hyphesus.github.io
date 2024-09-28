@@ -1,42 +1,56 @@
-/* General body setup */
-body {
+/* Reset and basic styles */
+* {
+    box-sizing: border-box;
+}
+
+html, body {
     margin: 0;
     padding: 0;
+    font-family: sans-serif;
     font-size: 16px;
     line-height: 1.5;
-    /* Removed height and flex properties */
+    width: 100%;
+}
+
+/* General body setup */
+body {
+    width: 100%;
 }
 
 /* Game container setup */
 #game-container {
     width: 100%;
-    max-width: 600px; /* Optional: Limit the max width for larger screens */
+    max-width: 600px; /* Optional: adjust as needed */
     margin: 0 auto;
-    padding: 0;
+    padding: 0 15px; /* Side padding for better appearance on mobile */
 }
 
-/* Tutorial section */
-#tutorial {
+/* Sections styling */
+section {
     width: 100%;
-    padding: 20px; /* Adjusted padding */
-    margin-bottom: 20px; /* Adjusted margin */
+    position: relative;
+    padding: 20px;
+    margin-bottom: 20px;
     background-color: #1e1e1e;
     color: #f0f0f0;
     text-align: center;
     font-size: 1em;
     border-radius: 10px;
+    overflow: hidden; /* Ensure content doesn't overflow */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
-/* Minimap section */
+/* Specific sections */
+#tutorial,
+#minimap,
+#game-screen,
+#inventory {
+    /* Additional styles if needed */
+}
+
+/* Minimap adjustments */
 #minimap {
-    width: 100%;
-    padding: 20px; /* Adjusted padding */
-    margin-bottom: 20px; /* Adjusted margin */
-    background-color: #1e1e1e;
-    text-align: center;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
 }
 
 #map-grid {
@@ -44,19 +58,12 @@ body {
     grid-template-columns: repeat(3, 1fr);
     gap: 5px;
     width: 100%;
-    height: 150px;
+    max-height: 150px;
+    overflow-y: auto; /* Allow scrolling if content overflows */
 }
 
 /* Game screen (description) */
 #game-screen {
-    width: 100%;
-    padding: 20px; /* Adjusted padding */
-    margin-bottom: 20px; /* Adjusted margin */
-    background-color: #1e1e1e;
-    text-align: center;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    min-height: 350px;
     overflow-y: auto;
 }
 
@@ -70,9 +77,13 @@ body {
     gap: 10px;
     margin-bottom: 20px;
     width: 150px;
-    margin: 0 auto 20px auto; /* Center the interactions section */
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
 }
 
+/* Grid areas */
 #north {
     grid-area: north;
 }
@@ -89,6 +100,7 @@ body {
     grid-area: west;
 }
 
+/* Buttons styling */
 button {
     background-color: #333;
     color: #fff;
@@ -107,26 +119,46 @@ button {
 
 /* Inventory section */
 #inventory {
-    width: 100%;
-    padding: 20px; /* Adjusted padding */
-    margin-bottom: 20px; /* Adjusted margin */
-    background-color: #1e1e1e;
-    text-align: center;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    min-height: 200px;
     overflow-y: auto;
 }
 
 /* Mute button */
 #mute-button {
     width: 100%;
-    padding: 15px; /* Adjusted padding */
+    padding: 15px;
     font-size: 1.2em;
     background-color: #333;
     color: #fff;
     border-radius: 10px;
     cursor: pointer;
     text-align: center;
-    margin: 20px 0; /* Adjusted margin */
+    margin: 20px 0;
+}
+
+/* Ensure sections stack correctly */
+#tutorial,
+#minimap,
+#game-screen,
+#interactions,
+#inventory,
+#mute-button {
+    clear: both;
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+    /* Adjust padding and font sizes for smaller screens */
+    section {
+        padding: 15px;
+    }
+
+    button {
+        width: 40px;
+        height: 40px;
+        font-size: 1em;
+    }
+
+    #interactions {
+        width: 120px;
+    }
 }
