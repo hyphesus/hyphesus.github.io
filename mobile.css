@@ -4,6 +4,10 @@ body {
     padding: 10px;
     font-size: 16px;
     line-height: 1.5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 /* Game container setup for mobile with a flexible layout */
@@ -11,33 +15,35 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10px;
+    gap: 20px; /* Increase gap between sections */
     width: 100%;
     max-width: 100%;
     margin: 0 auto;
+    padding-bottom: 50px; /* Ensure space at the bottom */
 }
 
-/* Tutorial section at the top */
+/* Tutorial section at the top with generous padding */
 #tutorial {
     width: 100%;
     text-align: center;
-    padding: 10px;
+    padding: 20px;
     background-color: #1e1e1e;
     color: #f0f0f0;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    font-size: 0.9em;
+    font-size: 1em; /* Slightly larger text */
 }
 
-/* Minimap styling, directly below the tutorial */
+/* Minimap styling with increased spacing */
 #minimap {
     width: 100%;
-    padding: 10px;
+    padding: 20px; /* Extra padding for space */
     background-color: #1e1e1e;
     text-align: center;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     border-radius: 10px;
-    position: relative; /* Ensure it's in the flow */
+    position: relative;
+    margin-bottom: 20px; /* Space below minimap */
 }
 
 #map-grid {
@@ -45,30 +51,31 @@ body {
     grid-template-columns: repeat(3, 1fr);
     gap: 5px;
     width: 100%;
-    height: 120px; /* Adjust to keep it visible and compact */
+    height: 150px; /* Slightly taller for better visibility */
 }
 
-/* Game screen (description), below the minimap */
+/* Game screen (description) with more height and margin */
 #game-screen {
-    padding: 10px;
+    padding: 20px;
     width: 100%;
     background-color: #1e1e1e;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     border-radius: 10px;
     overflow-y: auto;
-    height: 200px; /* Allow scrolling if the content exceeds the height */
+    height: 250px; /* Increase the height for more content */
+    margin-bottom: 20px; /* Space below description */
 }
 
-/* Fixed and aligned buttons section */
+/* Buttons section with more space around */
 #interactions {
-    width: 150px;
+    width: 200px; /* More width for buttons */
     display: grid;
     grid-template-areas:
         ". north ."
         "west . east"
         ". south .";
-    gap: 10px;
-    margin: 20px 0;
+    gap: 15px; /* Increase gap between buttons */
+    margin: 20px 0; /* More space around buttons */
 }
 
 #north {
@@ -92,11 +99,11 @@ button {
     color: #fff;
     border: none;
     cursor: pointer;
-    padding: 10px;
+    padding: 15px; /* Increase button size */
     border-radius: 50%;
-    font-size: 1.2em;
-    width: 50px;
-    height: 50px;
+    font-size: 1.5em; /* Larger button text */
+    width: 60px;
+    height: 60px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -111,26 +118,27 @@ button i {
     pointer-events: none;
 }
 
-/* Inventory section */
+/* Inventory section with more height and space */
 #inventory {
     width: 100%;
-    padding: 10px;
+    padding: 20px;
     background-color: #1e1e1e;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     border-radius: 10px;
-    max-height: 150px;
+    max-height: 200px; /* More space for inventory items */
     overflow-y: auto;
+    margin-bottom: 20px; /* Space below inventory */
 }
 
-/* Mute button at the bottom */
+/* Mute button at the bottom with space */
 #mute-button {
     width: 100%;
-    padding: 15px;
-    font-size: 1.2em;
+    padding: 20px;
+    font-size: 1.5em; /* Larger text */
     background-color: #333;
     color: #fff;
-    border-radius: 5px;
+    border-radius: 10px;
     cursor: pointer;
-    margin-top: 10px;
+    margin-top: 30px; /* Space above mute button */
     text-align: center;
 }
