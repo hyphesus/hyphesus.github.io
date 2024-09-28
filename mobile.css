@@ -30,6 +30,24 @@ body {
     box-shadow: none;
 }
 
+/* Responsive adjustments for mobile */
+@media (max-width: 768px) {
+    #interactions {
+        grid-template-areas:
+            "north"
+            "west south east";
+        width: 100%; /* Full width on mobile */
+        bottom: 10px; /* Move the interaction buttons higher on mobile */
+    }
+
+    button {
+        padding: 10px;
+        font-size: 1.2em;
+        width: 60px;
+        height: 60px;
+    }
+}
+
 #interactions {
     display: flex;
     flex-direction: column;
