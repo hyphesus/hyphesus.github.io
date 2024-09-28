@@ -6,29 +6,38 @@ body {
     line-height: 1.5;
 }
 
-/* Game container setup for mobile */
+/* Game container setup for mobile with a flexible layout */
 #game-container {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto 1fr auto;
-    grid-template-areas:
-        "minimap"
-        "game-screen"
-        "inventory";
-    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     gap: 10px;
-    position: relative;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
 }
 
-/* Minimap styling */
-#minimap {
-    grid-area: minimap;
+/* Tutorial section at the top */
+#tutorial {
     width: 100%;
-    height: 120px; /* Compact the height */
+    text-align: center;
+    padding: 10px;
+    background-color: #1e1e1e;
+    color: #f0f0f0;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    font-size: 0.9em;
+}
+
+/* Minimap styling, directly below the tutorial */
+#minimap {
+    width: 100%;
     padding: 10px;
     background-color: #1e1e1e;
     text-align: center;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    position: relative; /* Ensure it's in the flow */
 }
 
 #map-grid {
@@ -36,42 +45,30 @@ body {
     grid-template-columns: repeat(3, 1fr);
     gap: 5px;
     width: 100%;
-    height: 100%;
+    height: 120px; /* Adjust to keep it visible and compact */
 }
 
-/* Game screen (description) */
+/* Game screen (description), below the minimap */
 #game-screen {
-    grid-area: game-screen;
     padding: 10px;
+    width: 100%;
     background-color: #1e1e1e;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
     overflow-y: auto;
-    max-height: 40%; /* Limit height to give space for the map and buttons */
+    height: 200px; /* Allow scrolling if the content exceeds the height */
 }
 
-/* Inventory section */
-#inventory {
-    grid-area: inventory;
-    padding: 10px;
-    background-color: #1e1e1e;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    max-height: 100px;
-    overflow-y: auto;
-}
-
-/* Fixed interaction buttons */
+/* Fixed and aligned buttons section */
 #interactions {
-    position: fixed;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
+    width: 150px;
     display: grid;
     grid-template-areas:
         ". north ."
         "west . east"
         ". south .";
     gap: 10px;
-    width: 150px; /* Compact width */
+    margin: 20px 0;
 }
 
 #north {
@@ -114,43 +111,26 @@ button i {
     pointer-events: none;
 }
 
-/* Modal adjustments for mobile */
-#modal {
-    width: 90%;
-    height: auto;
-    top: 20px;
-    right: 20px;
-    z-index: 1000;
-    position: fixed;
-    background-color: #1e1e1e;
-    color: #f0f0f0;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-}
-
-h2, h3 {
-    text-align: center;
-    font-size: 1.2em;
-}
-
-li {
-    padding: 5px 0;
-    font-size: 1em;
-}
-
-#tutorial {
-    padding: 5px;
-    font-size: 0.9em;
-}
-
-#mute-button {
+/* Inventory section */
+#inventory {
     width: 100%;
     padding: 10px;
+    background-color: #1e1e1e;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    max-height: 150px;
+    overflow-y: auto;
+}
+
+/* Mute button at the bottom */
+#mute-button {
+    width: 100%;
+    padding: 15px;
     font-size: 1.2em;
     background-color: #333;
     color: #fff;
     border-radius: 5px;
     cursor: pointer;
-    margin-bottom: 10px;
+    margin-top: 10px;
+    text-align: center;
 }
