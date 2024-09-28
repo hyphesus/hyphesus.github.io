@@ -64,6 +64,7 @@ body {
 #room-description {
     width: 100%;
     margin-bottom: 20px;
+    min-height: 100px;
     position: relative; /* Ensure it's in normal flow */
 }
 
@@ -75,6 +76,7 @@ body {
         ". south .";
     gap: 10px;
     width: 150px;
+    clear: both;
     margin: 0 auto;
     position: relative; /* Ensure it's in normal flow */
     /* Remove any absolute positioning */
