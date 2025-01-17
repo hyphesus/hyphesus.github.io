@@ -1,3 +1,4 @@
+/* Adjusted to use Bootstrap */
 
 /* General Styling */
 body {
@@ -7,7 +8,7 @@ body {
     margin: 0;
     padding: 0;
     display: flex;
-    height: 100vh;
+    min-height: 100vh;
     justify-content: center;
     align-items: center;
     flex-direction: column;
@@ -15,8 +16,6 @@ body {
 
 #game-container {
     display: grid;
-    grid-template-columns: 1fr 2fr 1fr; /* Adjusted column widths */
-    grid-template-rows: 1fr 4fr;
     grid-template-areas:
         "minimap game-screen inventory"
         "minimap game-screen inventory";
@@ -27,12 +26,12 @@ body {
     margin: 0 auto; /* Center the container */
 }
 
-#minimap h3 {
-    margin: 0;
-    padding-bottom: 10px;
-    text-align: center;
-    color: #f0f0f0;
-    font-size: 1.5em;
+/* Use Bootstrap grid classes for responsive layout */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
 }
 
 #minimap {
@@ -42,6 +41,14 @@ body {
     border-radius: 10px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
     text-align: center;
+}
+
+#minimap h3 {
+    margin: 0;
+    padding-bottom: 10px;
+    text-align: center;
+    color: #f0f0f0;
+    font-size: 1.5em;
 }
 
 #map-grid {
@@ -86,35 +93,15 @@ body {
 
 /* Interaction buttons styled to resemble arrow keys */
 #interactions {
-    display: grid;
-    grid-template-areas:
-        ". north ."
-        "west . east"
-        ". south .";
-    gap: 10px;
+    display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    gap: 10px;
     position: absolute;
     bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
-    width: 150px; /* Adjusted width */
-}
-
-#north {
-    grid-area: north;
-}
-
-#south {
-    grid-area: south;
-}
-
-#east {
-    grid-area: east;
-}
-
-#west {
-    grid-area: west;
 }
 
 button {
@@ -213,4 +200,4 @@ li {
     #inventory {
         max-height: 300px; /* Allow more items to be visible on larger screens */
     }
-} 
+}
