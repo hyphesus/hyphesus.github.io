@@ -1,4 +1,4 @@
-/* Adjusted to use Bootstrap */
+/* Adjusted to use Bootstrap and refine arrow button positioning */
 
 /* General Styling */
 body {
@@ -18,7 +18,8 @@ body {
     display: grid;
     grid-template-areas:
         "minimap game-screen inventory"
-        "minimap game-screen inventory";
+        "minimap game-screen inventory"
+        "minimap buttons inventory";
     width: 100%;
     max-width: 1200px; /* Set maximum width */
     height: 80vh;
@@ -91,17 +92,47 @@ body {
     margin-bottom: 20px;
 }
 
-/* Interaction buttons styled to resemble arrow keys */
+/* Interaction buttons in a square box */
 #interactions {
-    display: flex;
-    flex-wrap: wrap;
+    grid-area: buttons;
+    display: grid;
+    grid-template-areas:
+        ". north ."
+        "west center east"
+        ". south .";
+    gap: 10px;
     justify-content: center;
     align-items: center;
-    gap: 10px;
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
+    background-color: #1e1e1e;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    position: relative;
+}
+
+#north {
+    grid-area: north;
+}
+
+#south {
+    grid-area: south;
+}
+
+#east {
+    grid-area: east;
+}
+
+#west {
+    grid-area: west;
+}
+
+#center {
+    grid-area: center;
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
 }
 
 button {
