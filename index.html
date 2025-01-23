@@ -1,271 +1,166 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Berhan Saydam, Game Programmer Portfolio</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="mobile.css" media="screen and (max-width: 768px)">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Berhan's Portfolio</title>
+    <!-- Link to external CSS -->
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <div id="game-container">
-        <div id="minimap">
-            <h3>Minimap</h3>
-            <div id="map-grid">
-                <!-- Grid cells will be generated dynamically -->
+
+    <!-- Fun marquee header to capture that old-school feel -->
+    <marquee behavior="scroll" direction="left" scrollamount="6">
+        <strong>Check Out My Socials! Follow My Itch Page For More Games! More Upcoming Games Soon Featuring Torero!  </strong>
+    </marquee>
+
+    <!-- Main container -->
+    <div class="container">
+
+        <!-- Header / Intro Section -->
+        <header class="header-section">
+            <div class="header-content">
+                <h1 class="title">Berhan Saydam</h1>
+                <p class="subtitle">Computer Engineer & Game Developer</p>
             </div>
-        </div>
-        <div id="game-screen">
-            <div id="room-description">
-                <h2>Berhan Saydam, Game Programmer Portfolio Welcomes You...</h2>
-                <p>You find yourself in a dimly lit room with a computer terminal in the center. The air is filled with
-                    the hum of machinery...</p>
+            <!-- A classic "Under Construction" GIF can help set the theme -->
+            <div class="header-gif">
+                <img src="https://www.netanimations.net/Animated-flashing-construction-barracade-traffic-sign.gif" alt="Under Construction" />
             </div>
-        </div>
-        <!-- Moved #interactions outside of #game-screen -->
-        <div id="interactions">
-            <button id="north" onclick="moveToRoom('north')">
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            <button id="west" onclick="moveToRoom('west')">
-                <i class="fas fa-arrow-left"></i>
-            </button>
-            <button id="east" onclick="moveToRoom('east')">
-                <i class="fas fa-arrow-right"></i>
-            </button>
-            <button id="south" onclick="moveToRoom('south')">
-                <i class="fas fa-arrow-down"></i>
-            </button>
-        </div>
-        <div id="inventory">
-            <h3>Inventory</h3>
-            <ul id="inventory-list">
-                <!-- Items will be dynamically added here -->
+        </header>
+            <div class="welcome-gif">
+                <img src="./welcome.gif" alt="Welcome" />
+            </div>
+        <!-- Navigation (optional) -->
+        <nav class="navbar">
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
-        </div>
-        <audio id="background-music" src="bg.mp3" loop></audio>
-        <button id="mute-button" onclick="toggleMute()">Unmute</button>
-        <div id="modal" class="modal hidden">
-            <div class="modal-content">
-                <span class="close-btn" onclick="closeModal()">&times;</span>
-                <div id="modal-body"></div>
+        </nav>
+
+        <!-- About Section -->
+        <section id="about" class="section">
+            <h2>About Me</h2>
+            <p>
+                I'm a Computer Engineering Bachelor's student from Karadeniz Technical University (2020‑2025).
+                I develop Unity 2D/3D games and simulations. Feel free to download my CV below for more details!
+            </p>
+            <!-- Example "Download CV" button (assume you upload your PDF to the repo) -->
+            <a class="download-btn" href="Berhan_Saydam_CV.pdf" target="_blank">Download CV</a>
+            <div class="fun-gif">
+                <img src="https://www.netanimations.net/Moving-picture-small-finger-pointing-up-animated-gif.gif" alt="Retro Fun" />
             </div>
-        </div>
+        </section>
+
+        <!-- Education / Skills Section -->
+        <section id="education" class="section">
+            <h2>What do I know?</h2>
+            <h3>Bachelor of Computer Engineering</h3>
+            <p>
+                I'm currently pursuing my Bachelor's degree in Computer Engineering at Karadeniz Technical University.
+                I've taken courses in programming, data structures, algorithms, and software engineering.
+            </p>
+            <h3>Skills</h3>
+            <ul class="skills-list">
+                <li>C#</li>
+                <li>C++</li>
+                <li>Python</li>
+                <li>Unity</li>
+                <li>OOP</li>
+                <li>Git</li>
+                <li>HTML</li>
+                <li>JavaScript</li>
+            </ul>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="section">
+            <h2>Here's some of my Projects</h2>
+            <div class="project-card">
+                <h3>TeethSim</h3>
+                <img src="images/teethsim_screenshot.png" alt="TeethSim Screenshot" />
+                <p>A Simulation project pursuing to improve dentist student's learning progress by using the haptic device 'Phantom Omni' . My computer engineering final's project , which has been graded with AA and awarded especially by my department.</p>
+                <a href="https://github.com/hyphesus/TeethSim" target="_blank" class="project-link">View on GitHub</a>
+            </div>
+
+            <div class="project-card">
+                <h3>HTMLCrush</h3>
+                <img src="images/htmlcrush_screenshot.png" alt="HTMLCrush Screenshot" />
+                <p>A puzzle game built entirely with HTML, CSS, and JavaScript.</p>
+                <a href="https://github.com/hyphesus/HTMLCrush" target="_blank" class="project-link">View on GitHub</a>
+            </div>
+
+            <div class="project-card">
+                <h3>In The Trail</h3>
+                <img src="images/in_the_trail_screenshot.png" alt="In The Trail Screenshot" />
+                <p>A Unity 3D Exploration / Walking simulator game in the wilderness.</p>
+                <a href="https://hyphesus.itch.io/in-the-trail" target="_blank" class="project-link">Download on itch.io</a>
+            </div>
+
+            <div class="project-card">
+                <h3>Deadpack: Necromancy Ride</h3>
+                <img src="images/deadpack_screenshot.png" alt="Deadpack Screenshot" />
+                <p>A 2D Unity Endless Runner type game which is available via UnityWebGL on itch.</p>
+                <a href="https://hyphesus.itch.io/deadpack-necromancyride" target="_blank" class="project-link">Play on
+                    itch.io</a>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section">
+            <h2>Contact</h2>
+            <p>Feel free to reach out to me via email or find me on social media:</p>
+
+            <div class="contact-icons oldschool-buttons">
+                <!-- Email (Generic "Email me" button) -->
+                <a href="mailto:berhansaydam01@gmail.com" class="icon-link" title="Email">
+                    <img src="./images/gmail_88x31.gif" alt="Email Me" width="88" height="31" />
+                </a>
+
+                <!-- LinkedIn (Generic "Visit!" button) -->
+                <a href="https://www.linkedin.com/in/berhan-saydam/" target="_blank" class="icon-link" title="LinkedIn">
+                    <img src="./images/linkedin.gif" alt="Visit My Page" width="88"
+                        height="31" />
+                </a>
+
+                <!-- GitHub (Generic "Go!" button) -->
+                <a href="https://github.com/hyphesus" target="_blank" class="icon-link" title="GitHub">
+                    <img src="./images/github.gif" alt="Go!" width="88" height="31" />
+                </a>
+
+                <!-- Itch.io (Generic "Click Here" button) -->
+                <a href="https://hyphesus.itch.io" target="_blank" class="icon-link" title="Itch.io">
+                    <img src="./images/itch.gif" alt="Click Here" width="88"
+                        height="31" />
+                </a>
+            </div>
+
+            <p class="phone">
+                Phone: <strong>+90 542 712 2661</strong>
+            </p>
+        </section>
+
+
+        <footer>
+            <div class="footer-row">
+                <!-- Left text -->
+                <span class="footer-left">This website has had</span>
+                <!-- GIF in the middle -->
+                <img src="./errorcounter.gif" alt="Error Counter" />
+                <!-- Right text -->
+                <span class="footer-right"> visits since, uh.. what year is it, again?</span>
+            </div>
+
+            <!-- Your other footer content (e.g., © text) -->
+            <p>© 2025 Berhan Saydam</p>
+        </footer>
     </div>
-    <div id="tutorial">
-        <p>Use the arrow keys / buttons on screen to navigate and click on items in your inventory to learn more.</p>
-    </div>
-    
-    <script>
-        const rooms = {
-            start: {
-                description: "You find yourself in a dimly lit room with a computer terminal in the center. Terminal has a message for you: 'Welcome to My Portfolio, I'm Berhan Saydam, a Game Programmer. Please explore your surroundings to find out more about me.' The air is filled with the hum of machinery...",
-                north: "codingLab",
-                south: "projectHall",
-                east: "schoolVault",
-                west: "artifactRoom",
-                items: []
-            },
-            codingLab: {
-                description: "You enter the Coding Lab, filled with monitors displaying lines of code. A code book lies on the desk. It seems this place has been used in the near future.",
-                north: null,
-                south: "start",
-                east: null,
-                west: null,
-                items: ["Code Book" , "Tools Guide"]
-            },
-            projectHall: {
-                description: "This is the Project Hall. The walls are covered with screens showcasing various projects. It seems like these projects have been developed by the owner of this place.",
-                north: "start",
-                south: null,
-                east: null,
-                west: null,
-                items: ["Project TeethSim", "Project Torero", "Project In The Trail", "Project Deadpack Necromancyride"]
-            },
-            schoolVault: {
-                description: "You step into the School Vault, where Berhan's various other projects are stored as glowing orbs. Each orb represents a school project that he has worked on as a Bachelor's.",
-                north: null,
-                south: null,
-                east: null,
-                west: "start",
-                items: ["Project Orb: Tree Delivery", "Project Orb: Match 3", "Project Orb: Football Manager"]
-            },
-            artifactRoom: {
-                description: "The Artifact Room is filled with different pens, each pen pointing out a different link to connect with Berhan.",
-                north: null,
-                south: null,
-                east: "start",
-                west: null,
-                items: ["Patreon Pen", "LinkedIn Pen", "GitHub Pen"]
-            }
-        };
 
-        const itemDescriptions = {
-                "Code Book": "This book contains various programming language knowledge that Berhan has worked on: C#, C++, Python, JavaScript.",
-                "Tools Guide": "A handy guide filled with tools and other things that Berhan uses in his daily work: Unity, Git, Visual Studio Code, MagicaVoxel.",
-                "Project TeethSim": "A project that Berhan developed for his Computer Engineering Major Project. It's a 3D simulation of teeth examination. <a href='https://github.com/hyphesus/TeethSim' target='_blank'>View on GitHub</a>",
-                "Project Torero": "A 2D Top-down action roguelike project that Berhan has been working on. <a href='https://github.com/hyphesus/Torero' target='_blank'>View on GitHub</a>",
-                "Project In The Trail": "A 3D Platformer/adventure project that Berhan has been working on. <a href='https://hyphesus.itch.io/in-the-trail' target='_blank'>Play on Itch.io</a>",
-                "Project Deadpack Necromancyride": "A 2D Endless Runner project that Berhan has been working on. <a href='https://hyphesus.itch.io/deadpack-necromancyride' target='_blank'>Play on Itch.io</a>",
-                "Project Orb: Tree Delivery": "A glowing orb representing the Unity project , Top-Down 2D project where player delivers trees to the designated areas.",
-                "Project Orb: Match 3": "A glowing orb representing the match three game programmed in HTML: HTML Crush.",
-                "Project Orb: Football Manager": "A glowing orb representing the football manager game for honing OOP skills, programmed in C++ as a terminal application: Football Manager 2022.",
-                "Patreon Pen": "A pen that grants access to Berhan's Patreon website. <a href='https://www.patreon.com/c/HyphesusTheGameDev' target='_blank'>Support on Patreon</a>.",
-                "LinkedIn Pen": "A pen that opens the door to Berhan's professional network on <a href='https://www.linkedin.com/in/berhan-saydam/' target='_blank'>LinkedIn</a>.",
-                "GitHub Pen": "A pen that gives access to Berhan's <a href='https://github.com/hyphesus' target='_blank'>GitHub repositories</a>."
-            };
-
-
-        const mapLayout = {
-            rooms: {
-                start: { row: 1, col: 1 },
-                codingLab: { row: 0, col: 1 },
-                projectHall: { row: 2, col: 1 },
-                schoolVault: { row: 1, col: 2 },
-                artifactRoom: { row: 1, col: 0 }
-            }
-        };
-
-        let minRow = Infinity, maxRow = -Infinity, minCol = Infinity, maxCol = -Infinity;
-
-        // Calculate the grid size based on room positions
-        for (const room in mapLayout.rooms) {
-            const { row, col } = mapLayout.rooms[room];
-            if (row < minRow) minRow = row;
-            if (row > maxRow) maxRow = row;
-            if (col < minCol) minCol = col;
-            if (col > maxCol) maxCol = col;
-        }
-
-        const gridRows = maxRow - minRow + 1;
-        const gridCols = maxCol - minCol + 1;
-
-        let currentRoom = 'start';
-        const inventory = [];
-
-        document.addEventListener('keydown', function (event) {
-            switch (event.key) {
-                case 'ArrowUp':
-                    moveToRoom('north');
-                    break;
-                case 'ArrowDown':
-                    moveToRoom('south');
-                    break;
-                case 'ArrowLeft':
-                    moveToRoom('west');
-                    break;
-                case 'ArrowRight':
-                    moveToRoom('east');
-                    break;
-            }
-        });
-
-        function createMinimap() {
-            const grid = document.getElementById('map-grid');
-            grid.style.gridTemplateColumns = `repeat(${gridCols}, 1fr)`;
-
-            // Create grid cells based on calculated grid size
-            for (let r = 0; r < gridRows; r++) {
-                for (let c = 0; c < gridCols; c++) {
-                    const cell = document.createElement('div');
-                    cell.classList.add('grid-cell');
-                    grid.appendChild(cell);
-                }
-            }
-            updatePlayerPosition(mapLayout.rooms.start);
-        }
-
-        function updatePlayerPosition(position) {
-            const grid = document.getElementById('map-grid');
-            const cells = grid.getElementsByClassName('grid-cell');
-
-            // Clear previous position
-            Array.from(cells).forEach(cell => cell.classList.remove('active'));
-
-            // Calculate the correct index in the grid
-            const rowIndex = position.row - minRow;
-            const colIndex = position.col - minCol;
-            const index = rowIndex * gridCols + colIndex;
-
-            // Set the player's new position
-            cells[index].classList.add('active');
-        }
-
-        function moveToRoom(direction) {
-            const nextRoom = rooms[currentRoom][direction];
-            if (nextRoom) {
-                currentRoom = nextRoom;
-                updateRoom();
-                updatePlayerPosition(mapLayout.rooms[currentRoom]);
-            } else {
-                alert("You can't go that way!");
-            }
-        }
-
-        function updateRoom() {
-            const room = rooms[currentRoom];
-            document.getElementById('room-description').innerHTML = `
-                <h2>${capitalize(currentRoom.replace(/([A-Z])/g, ' $1'))}</h2>
-                <p>${room.description}</p>
-            `;
-            if (room.items.length > 0) {
-                room.items.forEach(item => {
-                    if (!inventory.includes(item)) {
-                        const itemButton = document.createElement('button');
-                        itemButton.innerText = `Take ${item}`;
-                        itemButton.onclick = () => takeItem(item);
-                        document.getElementById('room-description').appendChild(itemButton);
-                    }
-                });
-            }
-        }
-
-        function takeItem(item) {
-            inventory.push(item);
-            const li = document.createElement('li');
-            li.innerText = item;
-            li.onclick = () => useItem(item);
-            document.getElementById('inventory-list').appendChild(li);
-            updateRoom();
-        }
-
-        function useItem(item) {
-            const description = itemDescriptions[item] || "No description available for this item.";
-            document.getElementById('modal-body').innerHTML = description; // Use innerHTML instead of innerText
-            document.getElementById('modal').classList.remove('hidden');
-        }
-
-
-        function closeModal() {
-            document.getElementById('modal').classList.add('hidden');
-        }
-
-        function capitalize(string) {
-            return string.charAt(0).toUpperCase() + string.slice(1);
-        }
-
-        createMinimap();
-        updateRoom(); // Initialize the first room
-
-            // Background music control
-        const backgroundMusic = document.getElementById('background-music');
-
-        function toggleMute() {
-            const muteButton = document.getElementById('mute-button');
-            if (backgroundMusic.paused) {
-                backgroundMusic.play();  // Start playing the music if it's not playing yet
-                muteButton.innerText = "Mute";
-                backgroundMusic.muted = false;
-            } else if (backgroundMusic.muted) {
-                backgroundMusic.muted = false;
-                muteButton.innerText = "Mute";
-            } else {
-                backgroundMusic.muted = true;
-                muteButton.innerText = "Unmute";
-            }
-        }
-    </script>
 </body>
 
 </html>
